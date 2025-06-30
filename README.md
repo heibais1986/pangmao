@@ -43,8 +43,11 @@
 如果这个故事打动了你，或者这个项目对你有所启发，不妨请作者喝杯咖啡，支持后续的创作！
 
 微信支付 (WeChat Pay)
-	![微信收款码.png](../../Pictures/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.png)
+	![image](https://github.com/user-attachments/assets/a5c5ac9f-b3d0-4244-bed5-48116cec5dce)
+
 
 支付宝 (Alipay)
-    ![支付宝收款码.jpg](../../Pictures/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.jpg)
+	![image](https://github.com/user-attachments/assets/72fb93f9-0bb3-48da-bac9-89d5f7960da7)
 
+ETH: 0x143C6b1A6893efafc8F2f76E93dfD08b1441c29a
+SOL: 6GTQQNBuDySX7DAsF4mAxjuYygMZ4qfqnMDX4pDKGVds
