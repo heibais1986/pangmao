@@ -71,6 +71,11 @@
             opacity: 0;
             animation: fadeIn 1s forwards;
         }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
@@ -91,8 +96,8 @@
     <div class="container mx-auto px-4 md:px-6">
 
         <section id="hero" class="text-center min-h-[60vh] flex flex-col justify-center items-center py-20 story-section">
-            <div class="w-24 h-24 md:w-32 md:h-32 mb-6 rounded-full bg-gradient-to-br from-orange-500 to-amber-300 flex items-center justify-center shadow-2xl shadow-orange-500/30">
-                <svg class="w-16 h-16 md:w-20 md:h-20 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            <div class="w-24 h-24 md:w-32 md:h-32 mb-6 rounded-full bg-gradient-to-br from-orange-500 to-amber-300 flex items-center justify-center shadow-2xl shadow-orange-500/30 text-6xl">
+                👁️
             </div>
             <h2 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">一念深渊，一世复仇</h2>
             <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-400">一个关于背叛与重生的故事。向下滚动，开启这段复仇之旅。</p>
@@ -237,6 +242,11 @@
 
         viewChatBtn.addEventListener('click', () => chatModal.classList.remove('hidden'));
         closeChatBtn.addEventListener('click', () => chatModal.classList.add('hidden'));
+        chatModal.addEventListener('click', (e) => {
+            if (e.target === chatModal) {
+                chatModal.classList.add('hidden');
+            }
+        });
 
         const evidenceModal = document.getElementById('evidence-modal');
         const viewEvidenceBtn = document.getElementById('view-evidence-btn');
@@ -253,25 +263,38 @@
             { type: 'text', content: '以及...林默最后的汉堡', class: 'text-3xl font-bold' },
         ];
 
-        let evidenceTimeout;
+        let evidenceTimeouts = [];
 
         viewEvidenceBtn.addEventListener('click', () => {
             evidenceModal.classList.remove('hidden');
             evidenceContent.innerHTML = '';
+
+            evidenceTimeouts.forEach(clearTimeout);
+            evidenceTimeouts = [];
+
             let delay = 500;
             evidences.forEach((item, index) => {
-                evidenceTimeout = setTimeout(() => {
+                const timeoutId = setTimeout(() => {
                     const el = document.createElement('div');
                     el.className = `evidence-item ${item.class}`;
                     el.textContent = item.content;
                     evidenceContent.appendChild(el);
                 }, delay * (index + 1));
+                evidenceTimeouts.push(timeoutId);
             });
         });
 
-        closeEvidenceBtn.addEventListener('click', () => {
+        const closeEvidenceModal = () => {
             evidenceModal.classList.add('hidden');
-            clearTimeout(evidenceTimeout);
+            evidenceTimeouts.forEach(clearTimeout);
+            evidenceTimeouts = [];
+        };
+
+        closeEvidenceBtn.addEventListener('click', closeEvidenceModal);
+        evidenceModal.addEventListener('click', (e) => {
+            if (e.target === evidenceModal) {
+                closeEvidenceModal();
+            }
         });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
