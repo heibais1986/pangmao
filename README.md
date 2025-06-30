@@ -3,6 +3,7 @@
 这是一个基于“胖猫”事件改编的互动叙事网页应用。我们致力于通过现代网页技术，将一个关于背叛、复仇与最终救赎的深刻故事，以更具沉浸感和情感冲击力的方式呈现给读者。
 
 ➡️ 点击[这里](https://pangmao.docman.edu.kg)，在线体验故事
+
 故事简介
 
 两年，51万——这串用年轻代练林默的青春和健康换来的数字，最终只化为重庆江边的一阵风。他为这场奔赴，吃下了两个月来第一顿肉，却成了他人生的最后一餐。在经历了女友谭欣的无情背叛后，他纵身跃入冰冷的江水。
@@ -51,4 +52,5 @@
 	![image](https://github.com/user-attachments/assets/72fb93f9-0bb3-48da-bac9-89d5f7960da7)
 
 ETH: 0x143C6b1A6893efafc8F2f76E93dfD08b1441c29a
+
 SOL: 6GTQQNBuDySX7DAsF4mAxjuYygMZ4qfqnMDX4pDKGVds
