@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Dusk to Dawn -->
     <!-- Application Structure Plan: A vertical, scroll-based SPA simulating a storyboard. Each episode from the script is a section with scroll-triggered animations. Key evidence is presented in interactive modals (e.g., a simulated phone screen) to enhance immersion. This structure provides a linear, engaging narrative flow superior to static text, making the story's progression intuitive and compelling. -->
     <!-- Visualization & Content Choices: Report Info -> Goal -> Viz/Presentation Method -> Interaction -> Justification -> Library/Method.
@@ -18,7 +18,7 @@
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
-            font-family: 'Noto Sans SC', sans-serif;
+            font-family: 'Poppins', 'Noto Sans SC', sans-serif;
             background-color: #111827;
             color: #E5E7EB;
         }
@@ -82,13 +82,16 @@
 
 <header class="fixed top-0 left-0 right-0 bg-gray-900/50 backdrop-blur-sm z-50 shadow-lg">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 class="text-xl md:text-2xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-orange-500">橘猫重生复仇记</h1>
-        <nav class="hidden md:flex space-x-6 text-gray-300">
-            <a href="#episode-1" class="hover:text-orange-400 transition-colors">深渊</a>
-            <a href="#episode-3" class="hover:text-orange-400 transition-colors">复仇</a>
-            <a href="#episode-6" class="hover:text-orange-400 transition-colors">审判</a>
-            <a href="#episode-7" class="hover:text-orange-400 transition-colors">暖阳</a>
-        </nav>
+        <h1 id="app-title" data-lang-key="app_title" class="text-xl md:text-2xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-orange-500"></h1>
+        <div class="flex items-center space-x-6">
+            <nav class="hidden md:flex space-x-6 text-gray-300">
+                <a href="#episode-1" data-lang-key="nav_abyss" class="hover:text-orange-400 transition-colors"></a>
+                <a href="#episode-3" data-lang-key="nav_revenge" class="hover:text-orange-400 transition-colors"></a>
+                <a href="#episode-6" data-lang-key="nav_judgment" class="hover:text-orange-400 transition-colors"></a>
+                <a href="#episode-7" data-lang-key="nav_sunshine" class="hover:text-orange-400 transition-colors"></a>
+            </nav>
+            <button id="lang-toggle-btn" class="text-sm font-semibold text-gray-300 border border-gray-600 px-3 py-1 rounded-full hover:bg-gray-700 hover:text-white transition-colors">EN</button>
+        </div>
     </div>
 </header>
 
@@ -99,83 +102,83 @@
             <div class="w-24 h-24 md:w-32 md:h-32 mb-6 rounded-full bg-gradient-to-br from-orange-500 to-amber-300 flex items-center justify-center shadow-2xl shadow-orange-500/30 text-6xl">
                 👁️
             </div>
-            <h2 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">一念深渊，一世复仇</h2>
-            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-400">一个关于背叛与重生的故事。向下滚动，开启这段复仇之旅。</p>
+            <h2 data-lang-key="hero_title" class="text-4xl md:text-6xl font-black mb-4 tracking-tight"></h2>
+            <p data-lang-key="hero_subtitle" class="max-w-2xl mx-auto text-lg md:text-xl text-gray-400"></p>
         </section>
 
         <section id="episode-1" class="py-16 md:py-24 space-y-8 story-section">
-            <h3 class="text-3xl md:text-4xl font-bold text-center text-orange-400">第一集：深渊</h3>
-            <p class="text-lg text-gray-300 max-w-3xl mx-auto text-center">两年，51万。当林默倾尽所有，奔赴他以为的未来时，他的人生，连同那个奢侈的双层牛肉汉堡，一同坠入了冰冷的江水。</p>
+            <h3 data-lang-key="ep1_title" class="text-3xl md:text-4xl font-bold text-center text-orange-400"></h3>
+            <p data-lang-key="ep1_subtitle" class="text-lg text-gray-300 max-w-3xl mx-auto text-center"></p>
             <div class="grid md:grid-cols-2 gap-8 items-center pt-8">
                 <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-                    <h4 class="font-bold text-xl mb-3">倾尽所有</h4>
-                    <p class="text-gray-400">他住在没有阳光的隔断间，吃着10元的盒饭，只为将每一个金币都变成转账记录，飞向千里之外的女友谭欣。他的猫“胖虎”，是他唯一的慰藉。</p>
+                    <h4 data-lang-key="ep1_card1_title" class="font-bold text-xl mb-3"></h4>
+                    <p data-lang-key="ep1_card1_text" class="text-gray-400"></p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-                    <h4 class="font-bold text-xl mb-3">无情背叛</h4>
-                    <p class="text-gray-400">他满怀希望来到重庆，看到的却是她挽着保时捷男友的刺眼笑容。他的质问，只换来一句冰冷的“你太幼稚了”。</p>
+                    <h4 data-lang-key="ep1_card2_title" class="font-bold text-xl mb-3"></h4>
+                    <p data-lang-key="ep1_card2_text" class="text-gray-400"></p>
                 </div>
             </div>
             <div class="text-center pt-6">
-                <button id="view-chat-btn" class="bg-orange-500 text-white font-bold py-3 px-8 rounded-full hover:bg-orange-600 transition-transform hover:scale-105 shadow-lg shadow-orange-500/20">查看最后的聊天记录</button>
+                <button id="view-chat-btn" data-lang-key="ep1_button" class="bg-orange-500 text-white font-bold py-3 px-8 rounded-full hover:bg-orange-600 transition-transform hover:scale-105 shadow-lg shadow-orange-500/20"></button>
             </div>
         </section>
 
         <section id="episode-2" class="py-16 md:py-24 space-y-8 story-section">
-            <h3 class="text-3xl md:text-4xl font-bold text-center text-sky-400">第二集：新生</h3>
-            <p class="text-lg text-gray-300 max-w-3xl mx-auto text-center">意识在黑暗中重聚，他成了一只名为“元宝”的橘猫。新的世界奢华而温暖，却无法熄灭他从林默灵魂深处继承的复仇之火。</p>
+            <h3 data-lang-key="ep2_title" class="text-3xl md:text-4xl font-bold text-center text-sky-400"></h3>
+            <p data-lang-key="ep2_subtitle" class="text-lg text-gray-300 max-w-3xl mx-auto text-center"></p>
             <div class="bg-gray-800/50 p-8 rounded-2xl shadow-xl mt-8">
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="flex-1">
-                        <h4 class="font-bold text-2xl mb-4">顶级猫生</h4>
-                        <p class="text-gray-400">新主人苏晚给了他一个从未想象过的世界：顶级的猫粮、宽敞的别墅和无尽的宠爱。但他的人类智慧，让他成为了最与众不同的存在。</p>
+                        <h4 data-lang-key="ep2_card1_title" class="font-bold text-2xl mb-4"></h4>
+                        <p data-lang-key="ep2_card1_text" class="text-gray-400"></p>
                     </div>
                     <div class="flex-1 border-t-2 md:border-t-0 md:border-l-2 border-gray-700 pt-8 md:pt-0 md:pl-8">
-                        <h4 class="font-bold text-2xl mb-4">复仇之火</h4>
-                        <p class="text-gray-400">他白天是慵懒的宠物，夜晚是在平板电脑上搜寻仇人踪迹的复仇者。当“谭欣”的名字出现在一场晚宴名单上时，他知道，狩猎开始了。</p>
+                        <h4 data-lang-key="ep2_card2_title" class="font-bold text-2xl mb-4"></h4>
+                        <p data-lang-key="ep2_card2_text" class="text-gray-400"></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="episode-3" class="py-16 md:py-24 space-y-12 story-section">
-            <h3 class="text-3xl md:text-4xl font-bold text-center text-red-500">第三集至第五集：复仇之路</h3>
-            <p class="text-lg text-gray-300 max-w-3xl mx-auto text-center">一场精心策划的复仇，每一步都精准地踩在谭欣的痛点上，撕开她华丽的伪装。</p>
+            <h3 data-lang-key="ep3_title" class="text-3xl md:text-4xl font-bold text-center text-red-500"></h3>
+            <p data-lang-key="ep3_subtitle" class="text-lg text-gray-300 max-w-3xl mx-auto text-center"></p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center pt-8">
                 <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform">
                     <div class="text-5xl mb-4">🍷</div>
-                    <h4 class="font-bold text-xl mb-2">开胃菜</h4>
-                    <p class="text-gray-400">晚宴上“意外”的红酒，让她精心维持的优雅第一次当众破裂。</p>
+                    <h4 data-lang-key="ep3_card1_title" class="font-bold text-xl mb-2"></h4>
+                    <p data-lang-key="ep3_card1_text" class="text-gray-400"></p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform">
                     <div class="text-5xl mb-4">🐭</div>
-                    <h4 class="font-bold text-xl mb-2">梦魇</h4>
-                    <p class="text-gray-400">花艺展上从天而降的死老鼠，让她引以为傲的事业声誉扫地。</p>
+                    <h4 data-lang-key="ep3_card2_title" class="font-bold text-xl mb-2"></h4>
+                    <p data-lang-key="ep3_card2_text" class="text-gray-400"></p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform">
                     <div class="text-5xl mb-4">📹</div>
-                    <h4 class="font-bold text-xl mb-2">獠牙</h4>
-                    <p class="text-gray-400">项圈摄像头拍下的致命证据，为最后的审判备好了最锋利的刀刃。</p>
+                    <h4 data-lang-key="ep3_card3_title" class="font-bold text-xl mb-2"></h4>
+                    <p data-lang-key="ep3_card3_text" class="text-gray-400"></p>
                 </div>
             </div>
         </section>
 
         <section id="episode-6" class="py-16 md:py-24 space-y-8 story-section">
-            <h3 class="text-3xl md:text-4xl font-bold text-center text-purple-400">第六集：审判</h3>
-            <p class="text-lg text-gray-300 max-w-3xl mx-auto text-center">投资发布会，是谭欣人生的巅峰，也是她坠入地狱的开始。当大屏幕亮起，所有的谎言和罪恶都无所遁形。</p>
+            <h3 data-lang-key="ep6_title" class="text-3xl md:text-4xl font-bold text-center text-purple-400"></h3>
+            <p data-lang-key="ep6_subtitle" class="text-lg text-gray-300 max-w-3xl mx-auto text-center"></p>
             <div class="text-center pt-6">
-                <button id="view-evidence-btn" class="bg-purple-500 text-white font-bold py-3 px-8 rounded-full hover:bg-purple-600 transition-transform hover:scale-105 shadow-lg shadow-purple-500/20">观看审判现场</button>
+                <button id="view-evidence-btn" data-lang-key="ep6_button" class="bg-purple-500 text-white font-bold py-3 px-8 rounded-full hover:bg-purple-600 transition-transform hover:scale-105 shadow-lg shadow-purple-500/20"></button>
             </div>
         </section>
 
         <section id="episode-7" class="py-16 md:py-24 space-y-8 story-section">
-            <h3 class="text-3xl md:text-4xl font-bold text-center text-yellow-300">第七集：暖阳</h3>
-            <p class="text-lg text-gray-300 max-w-3xl mx-auto text-center">当仇恨散去，复仇的火焰终归熄灭。林默的人生已经结束，而元宝的猫生，才刚刚开始。窗外，一轮新月悄然升起，干净明亮。</p>
+            <h3 data-lang-key="ep7_title" class="text-3xl md:text-4xl font-bold text-center text-yellow-300"></h3>
+            <p data-lang-key="ep7_subtitle" class="text-lg text-gray-300 max-w-3xl mx-auto text-center"></p>
             <div class="flex justify-center pt-8">
                 <div class="text-center p-8 bg-gray-800/50 rounded-2xl shadow-xl max-w-md">
                     <div class="text-6xl mb-4">☀️</div>
-                    <h4 class="font-bold text-2xl mb-2">新的猫生</h4>
-                    <p class="text-gray-400">他不再是复仇的鬼魂，他是一只被爱着的、有家的猫。在苏晚温暖的怀抱里，他发出了满足的、响亮的呼噜声。</p>
+                    <h4 data-lang-key="ep7_card_title" class="font-bold text-2xl mb-2"></h4>
+                    <p data-lang-key="ep7_card_text" class="text-gray-400"></p>
                 </div>
             </div>
         </section>
@@ -183,7 +186,7 @@
 </main>
 
 <footer class="text-center py-10 text-gray-500">
-    <p>一个故事的结束，是另一个故事的开始。</p>
+    <p data-lang-key="footer_text"></p>
 </footer>
 
 <!-- Chat Modal -->
@@ -191,20 +194,9 @@
     <div class="phone-screen flex flex-col overflow-hidden">
         <div class="bg-gray-200 p-3 flex items-center shadow-sm">
             <button id="close-chat-btn" class="mr-2 text-gray-600">&lt;</button>
-            <span class="font-bold text-gray-800">谭欣</span>
+            <span id="chat-header" class="font-bold text-gray-800"></span>
         </div>
-        <div class="flex-1 p-4 space-y-3 overflow-y-auto flex flex-col bg-white">
-            <div class="chat-bubble chat-sent">花店是怎么回事？</div>
-            <div class="chat-bubble chat-sent">那些钱……</div>
-            <div class="chat-bubble chat-received">林默，我们分手吧。</div>
-            <div class="chat-bubble chat-received">那些钱，是你自愿给我的，算是我们谈恋爱期间的共同基金。</div>
-            <div class="chat-bubble chat-sent">你说过要结婚的。</div>
-            <div class="chat-bubble chat-received">你太幼稚了，那点钱在重庆能做什么？</div>
-            <div class="chat-bubble chat-sent">我为了你，两年没吃过一顿好的……</div>
-            <div class="chat-bubble chat-received">那是你自己的事，我没逼你。</div>
-            <div class="flex items-center justify-center my-2">
-                <span class="text-xs text-gray-400 bg-gray-200 px-2 py-1 rounded-full">你已被对方拉黑</span>
-            </div>
+        <div id="chat-body" class="flex-1 p-4 space-y-3 overflow-y-auto flex flex-col bg-white">
         </div>
         <div class="bg-gray-200 p-2"></div>
     </div>
@@ -215,14 +207,151 @@
     <div class="projector-screen flex flex-col relative overflow-hidden p-8">
         <button id="close-evidence-btn" class="absolute top-4 right-4 text-white text-2xl z-10">&times;</button>
         <div id="evidence-content" class="w-full h-full flex flex-col justify-center items-center text-center space-y-6">
-            <!-- Content will be injected by JS -->
         </div>
     </div>
 </div>
 
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        const langData = {
+            zh: {
+                app_title: "橘猫重生复仇记",
+                nav_abyss: "深渊",
+                nav_revenge: "复仇",
+                nav_judgment: "审判",
+                nav_sunshine: "暖阳",
+                hero_title: "一念深渊，一世复仇",
+                hero_subtitle: "一个关于背叛与重生的故事。向下滚动，开启这段复仇之旅。",
+                ep1_title: "第一集：深渊",
+                ep1_subtitle: "两年，51万。当林默倾尽所有，奔赴他以为的未来时，他的人生，连同那个奢侈的双层牛肉汉堡，一同坠入了冰冷的江水。",
+                ep1_card1_title: "倾尽所有",
+                ep1_card1_text: "他住在没有阳光的隔断间，吃着10元的盒饭，只为将每一个金币都变成转账记录，飞向千里之外的女友谭欣。他的猫“胖虎”，是他唯一的慰藉。",
+                ep1_card2_title: "无情背叛",
+                ep1_card2_text: "他满怀希望来到重庆，看到的却是她挽着保时捷男友的刺眼笑容。他的质问，只换来一句冰冷的“你太幼稚了”。",
+                ep1_button: "查看最后的聊天记录",
+                ep2_title: "第二集：新生",
+                ep2_subtitle: "意识在黑暗中重聚，他成了一只名为“元宝”的橘猫。新的世界奢华而温暖，却无法熄灭他从林默灵魂深处继承的复仇之火。",
+                ep2_card1_title: "顶级猫生",
+                ep2_card1_text: "新主人苏晚给了他一个从未想象过的世界：顶级的猫粮、宽敞的别墅和无尽的宠爱。但他的人类智慧，让他成为了最与众不同的存在。",
+                ep2_card2_title: "复仇之火",
+                ep2_card2_text: "他白天是慵懒的宠物，夜晚是在平板电脑上搜寻仇人踪迹的复仇者。当“谭欣”的名字出现在一场晚宴名单上时，他知道，狩猎开始了。",
+                ep3_title: "第三集至第五集：复仇之路",
+                ep3_subtitle: "一场精心策划的复仇，每一步都精准地踩在谭欣的痛点上，撕开她华丽的伪装。",
+                ep3_card1_title: "开胃菜",
+                ep3_card1_text: "晚宴上“意外”的红酒，让她精心维持的优雅第一次当众破裂。",
+                ep3_card2_title: "梦魇",
+                ep3_card2_text: "花艺展上从天而降的死老鼠，让她引以为傲的事业声誉扫地。",
+                ep3_card3_title: "獠牙",
+                ep3_card3_text: "项圈摄像头拍下的致命证据，为最后的审判备好了最锋利的刀刃。",
+                ep6_title: "第六集：审判",
+                ep6_subtitle: "投资发布会，是谭欣人生的巅峰，也是她坠入地狱的开始。当大屏幕亮起，所有的谎言和罪恶都无所遁形。",
+                ep6_button: "观看审判现场",
+                ep7_title: "第七集：暖阳",
+                ep7_subtitle: "当仇恨散去，复仇的火焰终归熄灭。林默的人生已经结束，而元宝的猫生，才刚刚开始。窗外，一轮新月悄然升起，干净明亮。",
+                ep7_card_title: "新的猫生",
+                ep7_card_text: "他不再是复仇的鬼魂，他是一只被爱着的、有家的猫。在苏晚温暖的怀抱里，他发出了满足的、响亮的呼噜声。",
+                footer_text: "一个故事的结束，是另一个故事的开始。",
+                chat_header: "谭欣",
+                chat_log: [
+                    { type: 'sent', text: "花店是怎么回事？" },
+                    { type: 'sent', text: "那些钱……" },
+                    { type: 'received', text: "林默，我们分手吧。" },
+                    { type: 'received', text: "那些钱，是你自愿给我的，算是我们谈恋爱期间的共同基金。" },
+                    { type: 'sent', text: "你说过要结婚的。" },
+                    { type: 'received', text: "你太幼稚了，那点钱在重庆能做什么？" },
+                    { type: 'sent', text: "我为了你，两年没吃过一顿好的……" },
+                    { type: 'received', text: "那是你自己的事，我没逼你。" },
+                    { type: 'system', text: "你已被对方拉黑" }
+                ],
+                evidence_log: [
+                    { content: '证据一：与林默的聊天记录', class: 'text-3xl font-bold' },
+                    { content: '"那是你自己的事，我没逼你。"', class: 'text-xl text-red-400' },
+                    { content: '证据二：与不同“金主”的暧昧对话', class: 'text-3xl font-bold' },
+                    { content: '"那个傻子又打了十万过来，我们可以去欧洲了。"', class: 'text-xl text-red-400' },
+                    { content: '最终证据：51万转账记录', class: 'text-3xl font-bold' },
+                    { content: '转账备注：“自愿赠予”', class: 'text-xl text-red-400' },
+                    { content: '以及...林默最后的汉堡', class: 'text-3xl font-bold' },
+                ]
+            },
+            en: {
+                app_title: "The Reborn Cat's Revenge",
+                nav_abyss: "Abyss",
+                nav_revenge: "Revenge",
+                nav_judgment: "Judgment",
+                nav_sunshine: "Sunshine",
+                hero_title: "An Abyss of Betrayal, A Lifetime of Revenge",
+                hero_subtitle: "A story of betrayal and rebirth. Scroll down to begin the journey of vengeance.",
+                ep1_title: "Episode 1: The Abyss",
+                ep1_subtitle: "Two years, 510,000 yuan. When Lin Mo gave his all for what he thought was his future, his life, along with a luxurious double cheeseburger, plunged into the cold river.",
+                ep1_card1_title: "Giving Everything",
+                ep1_card1_text: "He lived in a sunless room, ate 10-yuan meals, all to turn every coin into a wire transfer for his girlfriend, Tan Xin. His cat, 'Fat Tiger', was his only solace.",
+                ep1_card2_title: "Cruel Betrayal",
+                ep1_card2_text: "He arrived in Chongqing full of hope, only to see her smiling on the arm of a man in a Porsche. His questions were met with a cold, 'You're so naive.'",
+                ep1_button: "View The Last Chat",
+                ep2_title: "Episode 2: Rebirth",
+                ep2_subtitle: "Consciousness re-formed in the darkness. He became an orange cat named 'Yuanbao'. The new world was luxurious and warm, but it couldn't extinguish the fire of vengeance.",
+                ep2_card1_title: "A Lavish Feline Life",
+                ep2_card1_text: "His new owner, Su Wan, gave him a world beyond imagination: premium cat food, a spacious villa, and endless affection. But his human intellect made him unique.",
+                ep2_card2_title: "The Fire of Revenge",
+                ep2_card2_text: "By day, a lazy pet; by night, a seeker of vengeance tracking his foe online. When 'Tan Xin' appeared on a gala guest list, he knew the hunt had begun.",
+                ep3_title: "Episodes 3-5: The Path of Revenge",
+                ep3_subtitle: "A meticulously planned revenge, each step striking Tan Xin's weak points, tearing away her glamorous facade.",
+                ep3_card1_title: "The Appetizer",
+                ep3_card1_text: "An 'accidental' wine spill at the gala shattered her carefully maintained elegance in public for the first time.",
+                ep3_card2_title: "The Nightmare",
+                ep3_card2_text: "A dead mouse in her masterpiece at the floral exhibition ruined her reputation and career.",
+                ep3_card3_title: "The Fangs",
+                ep3_card3_text: "The collar camera captured damning evidence, sharpening the blade for the final judgment.",
+                ep6_title: "Episode 6: The Judgment",
+                ep6_subtitle: "The investment conference was the peak of Tan Xin's life, and the beginning of her descent into hell. When the big screen lit up, all lies were exposed.",
+                ep6_button: "Witness The Judgment",
+                ep7_title: "Episode 7: The Sunshine",
+                ep7_subtitle: "When hatred faded, the flames of revenge were finally extinguished. Lin Mo's life was over, but Yuanbao's life as a cat had just begun.",
+                ep7_card_title: "A New Life",
+                ep7_card_text: "He was no longer a ghost of vengeance, but a beloved cat with a home. In Su Wan's warm embrace, he purred with contentment.",
+                footer_text: "The end of one story is the beginning of another.",
+                chat_header: "Tan Xin",
+                chat_log: [
+                    { type: 'sent', text: "What's with the flower shop?" },
+                    { type: 'sent', text: "And the money..." },
+                    { type: 'received', text: "Lin Mo, let's break up." },
+                    { type: 'received', text: "That money was a gift, a fund for our relationship. You gave it willingly." },
+                    { type: 'sent', text: "You said we would get married." },
+                    { type: 'received', text: "You're so naive. What can that little money do in this city?" },
+                    { type: 'sent', text: "For you, I ate poorly for two years..." },
+                    { type: 'received', text: "That's your own business. I didn't force you." },
+                    { type: 'system', text: "You have been blocked by this user" }
+                ],
+                evidence_log: [
+                    { content: 'Evidence 1: Chat log with Lin Mo', class: 'text-3xl font-bold' },
+                    { content: '"That\'s your own business. I didn\'t force you."', class: 'text-xl text-red-400' },
+                    { content: 'Evidence 2: Chats with other "benefactors"', class: 'text-3xl font-bold' },
+                    { content: '"That fool sent another 100k. We can go to Europe now."', class: 'text-xl text-red-400' },
+                    { content: 'Final Evidence: The 510,000 transfer', class: 'text-3xl font-bold' },
+                    { content: 'Transfer note: "Willingly gifted"', class: 'text-xl text-red-400' },
+                    { content: 'And... Lin Mo\'s last hamburger', class: 'text-3xl font-bold' },
+                ]
+            }
+        };
+        let currentLang = 'zh';
+        const langToggleBtn = document.getElementById('lang-toggle-btn');
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.dataset.langKey;
+                if (langData[lang] && langData[lang][key]) {
+                    el.textContent = langData[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+            langToggleBtn.textContent = lang === 'zh' ? 'EN' : '中文';
+        }
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'zh' ? 'en' : 'zh';
+            updateLanguage(currentLang);
+        });
+
         const storySections = document.querySelectorAll('.story-section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -239,8 +368,27 @@
         const chatModal = document.getElementById('chat-modal');
         const viewChatBtn = document.getElementById('view-chat-btn');
         const closeChatBtn = document.getElementById('close-chat-btn');
+        const chatHeader = document.getElementById('chat-header');
+        const chatBody = document.getElementById('chat-body');
 
-        viewChatBtn.addEventListener('click', () => chatModal.classList.remove('hidden'));
+        const openChatModal = () => {
+            chatHeader.textContent = langData[currentLang].chat_header;
+            chatBody.innerHTML = '';
+            langData[currentLang].chat_log.forEach(msg => {
+                const el = document.createElement('div');
+                if (msg.type === 'system') {
+                    el.className = 'flex items-center justify-center my-2';
+                    el.innerHTML = `<span class="text-xs text-gray-400 bg-gray-200 px-2 py-1 rounded-full">${msg.text}</span>`;
+                } else {
+                    el.className = `chat-bubble ${msg.type === 'sent' ? 'chat-sent' : 'chat-received'}`;
+                    el.textContent = msg.text;
+                }
+                chatBody.appendChild(el);
+            });
+            chatModal.classList.remove('hidden');
+        };
+
+        viewChatBtn.addEventListener('click', openChatModal);
         closeChatBtn.addEventListener('click', () => chatModal.classList.add('hidden'));
         chatModal.addEventListener('click', (e) => {
             if (e.target === chatModal) {
@@ -253,19 +401,9 @@
         const closeEvidenceBtn = document.getElementById('close-evidence-btn');
         const evidenceContent = document.getElementById('evidence-content');
 
-        const evidences = [
-            { type: 'text', content: '证据一：与林默的聊天记录', class: 'text-3xl font-bold' },
-            { type: 'text', content: '"那是你自己的事，我没逼你。"', class: 'text-xl text-red-400' },
-            { type: 'text', content: '证据二：与不同“金主”的暧昧对话', class: 'text-3xl font-bold' },
-            { type: 'text', content: '"那个傻子又打了十万过来，我们可以去欧洲了。"', class: 'text-xl text-red-400' },
-            { type: 'text', content: '最终证据：51万转账记录', class: 'text-3xl font-bold' },
-            { type: 'text', content: '转账备注：“自愿赠予”', class: 'text-xl text-red-400' },
-            { type: 'text', content: '以及...林默最后的汉堡', class: 'text-3xl font-bold' },
-        ];
-
         let evidenceTimeouts = [];
 
-        viewEvidenceBtn.addEventListener('click', () => {
+        const openEvidenceModal = () => {
             evidenceModal.classList.remove('hidden');
             evidenceContent.innerHTML = '';
 
@@ -273,7 +411,7 @@
             evidenceTimeouts = [];
 
             let delay = 500;
-            evidences.forEach((item, index) => {
+            langData[currentLang].evidence_log.forEach((item, index) => {
                 const timeoutId = setTimeout(() => {
                     const el = document.createElement('div');
                     el.className = `evidence-item ${item.class}`;
@@ -282,7 +420,7 @@
                 }, delay * (index + 1));
                 evidenceTimeouts.push(timeoutId);
             });
-        });
+        };
 
         const closeEvidenceModal = () => {
             evidenceModal.classList.add('hidden');
@@ -290,6 +428,7 @@
             evidenceTimeouts = [];
         };
 
+        viewEvidenceBtn.addEventListener('click', openEvidenceModal);
         closeEvidenceBtn.addEventListener('click', closeEvidenceModal);
         evidenceModal.addEventListener('click', (e) => {
             if (e.target === evidenceModal) {
@@ -305,6 +444,8 @@
                 });
             });
         });
+
+        updateLanguage(currentLang);
     });
 </script>
 
